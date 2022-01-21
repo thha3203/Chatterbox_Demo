@@ -8,10 +8,9 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      rooms: null,
+      rooms: [],
       messages: [],
-      page: 0,
-      mounted: false
+      page: 0
     };
   };
 
@@ -48,7 +47,7 @@ class App extends React.Component {
   // For Presentation
   handleObserver(entries, observer) {
     let refDiv = entries[0];
-    if (refDiv.isIntersecting && this.state.mounted) {
+    if (refDiv.isIntersecting) {
       let page = this.state.page + 1;
       this.getMessages(page);
       this.setState( curState => {
@@ -57,9 +56,6 @@ class App extends React.Component {
         };
       });
     };
-    this.setState( curState => {
-      return { mounted: true };
-    });
   };
 
   componentDidMount() {

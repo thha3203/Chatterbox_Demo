@@ -6,7 +6,7 @@ const app = express();
 
 app.use(express.json());
 app.use('/', express.static('public'));
-app.use('/present', express.static('presentation'));
+app.use('/presentation', express.static('presentation'));
 
 app.get('/messages', (req, res) => {
   api.getAllMessages()

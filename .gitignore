@@ -2,3 +2,4 @@ public/app.js
 presentation/app.js
 package-lock.json
 node_modules
+config.js
