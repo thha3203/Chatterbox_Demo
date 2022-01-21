@@ -4,6 +4,7 @@
   "description": "Using Intersection Observer to lazy load chatterbox messages",
   "main": "index.js",
   "scripts": {
+    "build:present": "webpack --config ./webpack.present.js",
     "build": "webpack",
     "dev": "webpack -w",
     "start": "nodemon ./server/index.js",
