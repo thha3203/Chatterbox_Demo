@@ -82,7 +82,7 @@ class App extends React.Component {
     return (
       <div>
         <div id='main'>
-          <h1>lazy load chatterbox</h1>
+          <h1>lazy chatterbox</h1>
           <Rooms rooms={this.state.rooms} />
           <Form />
         </div>
