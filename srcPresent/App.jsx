@@ -51,12 +51,14 @@ class App extends React.Component {
     if (this.state.previousY > y) {
       let page = this.state.page + 1;
       this.getMessages(page);
+      this.setState( curState => {
+        return {
+          page: page
+        };
+      });
     };
     this.setState( curState => {
-      return {
-        page: curState.page + 1,
-        previousY: y
-      };
+      return { previousY: y };
     });
   };
 
@@ -68,8 +70,8 @@ class App extends React.Component {
     // Obersver Options
     const options = {
       root: null,
-      rootMargin: '100px',
-      threshold: 0.1
+      rootMargin: '0px',
+      threshold: 1
     };
     // Create an observer
     this.observer = new IntersectionObserver(
@@ -90,7 +92,7 @@ class App extends React.Component {
         </div>
         <Chats messages={this.state.messages} />
         {/* For Presentation */}
-        <div ref={ (loadingRef) => this.loadingRef = loadingRef } ></div>
+        <div ref={ (loadingRef) => this.loadingRef = loadingRef } className='reference'>REFERENCE</div>
       </div>
     );
   };

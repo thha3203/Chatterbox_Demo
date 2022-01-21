@@ -47,3 +47,11 @@ form input[type="text"] {
 .username {
   font-weight: 800;
 }
+
+.reference {
+  background: rgb(0, 98, 255);
+  color: white;
+  padding: 30px 60px;
+  width: 500px;
+  margin: auto;
+}
