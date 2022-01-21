@@ -11,7 +11,7 @@ class App extends React.Component {
       rooms: null,
       messages: [],
       page: 0,
-      previousY: 0
+      mounted: false
     };
   };
 
@@ -47,8 +47,8 @@ class App extends React.Component {
 
   // For Presentation
   handleObserver(entries, observer) {
-    let y = entries[0].boundingClientRect.y;
-    if (this.state.previousY > y) {
+    let refDiv = entries[0];
+    if (refDiv.isIntersecting && this.state.mounted) {
       let page = this.state.page + 1;
       this.getMessages(page);
       this.setState( curState => {
@@ -58,7 +58,7 @@ class App extends React.Component {
       });
     };
     this.setState( curState => {
-      return { previousY: y };
+      return { mounted: true };
     });
   };
 

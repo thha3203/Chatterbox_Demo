@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build:present": "webpack --config ./webpack.present.js",
+    "dev:present": "webpack --config ./webpack.present.js -w",
     "build": "webpack",
     "dev": "webpack -w",
     "start": "nodemon ./server/index.js",
